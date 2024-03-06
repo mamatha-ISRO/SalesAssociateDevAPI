@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  salesassociate.api:
+    image: ${DOCKER_REGISTRY-}salesassociateapi
+    build:
+         context: .
+         dockerfile: SalesAssociate.API/Dockerfile
+    ports:
+      - "35045:80"
+      - "35055:443"
