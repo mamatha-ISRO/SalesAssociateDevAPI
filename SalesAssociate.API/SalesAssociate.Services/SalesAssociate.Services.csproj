@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Interfaces\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SalesAssociate.Models\SalesAssociate.Models.csproj" />
     <ProjectReference Include="..\SalesAssociate.Repositories\SalesAssociate.Repositories.csproj" />
   </ItemGroup>

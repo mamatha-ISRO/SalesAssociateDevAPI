@@ -1,8 +1,9 @@
 using SalesAssociate.Repositories;
+using SalesAssociate.Services.Services;
+using SalesAssociate.Services.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-void ConfigureHost(ConfigureHostBuilder host)
-{
+void ConfigureHost(ConfigureHostBuilder host){
 }
 
 // Setup services like database providers, etc.
@@ -20,7 +21,10 @@ void ConfigureServices(WebApplicationBuilder builder)
                 b.MigrationsAssembly("SalesAssociate.Repositories");
             })
         );
-
+    //setup dependency Injecton
+    builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+    builder.Services.AddScoped<ICarService, CarService>();
+    
 }
 
 // Setup our HTTP request/response pipeline
