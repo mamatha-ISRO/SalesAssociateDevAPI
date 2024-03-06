@@ -7,5 +7,25 @@ services:
          context: .
          dockerfile: SalesAssociate.API/Dockerfile
     ports:
-      - "35045:80"
-      - "35055:443"
+      - "35077:80"
+      - "35088:443"
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=carsdetails.db;Database=devdb;User Id=devdbuser;password=devdbpassword
+    depends_on:
+      - carsdetails.db
+
+  carsdetails.db:
+    container_name: "carsdetails.db"
+    restart: on-failure
+    image: "postgis/postgis:14-3.3-alpine"
+    ports:
+      - "35099:5432"
+    environment:
+      - POSTGRES_USER=devdbuser
+      - POSTGRES_DB=devdb
+      - POSTGRES_PASSWORD=devdbpassword
+    volumes:
+      - carsdetails-db:/var/lib/postgresql/data
+
+volumes:
+  carsdetails-db:
