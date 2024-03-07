@@ -50,16 +50,25 @@ void ExecuteMigrations(WebApplication app)
 
 #region
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:7018").AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin();
+        });
+});
 
 // Setup the application
 ConfigureHost(builder.Host);
 ConfigureServices(builder);
+
 // Execute migrations on startup
 var app = builder.Build();
 
 ExecuteMigrations(app);
 // Setup the HTTP pipeline
 ConfigurePipeline(app);
-
+app.UseCors();
 app.Run();
 #endregion
