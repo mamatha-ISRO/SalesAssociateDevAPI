@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SalesAssociate.Models\SalesAssociate.Models.csproj" />
     <ProjectReference Include="..\SalesAssociate.Services\SalesAssociate.Services.csproj" />
   </ItemGroup>
