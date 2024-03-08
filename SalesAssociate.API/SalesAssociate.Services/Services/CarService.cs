@@ -27,7 +27,7 @@ namespace SalesAssociate.Services.Services
             // Create the new Car entity
             var newEntity = new Car(src);
 
-            // Have the repository create the new game
+            // Have the repository create the new car
             _uow.Cars.Create(newEntity);
             await _uow.SaveAsync();
 
@@ -71,13 +71,13 @@ namespace SalesAssociate.Services.Services
 
         public async Task<CarVM> GetById(Guid id)
         {
-            // Get the requested Game entity from the repository
+            // Get the requested car entity from the repository
             var result = await _uow.Cars.GetById(id);
 
-            // Create the GameVM we want to return to the client
+            // Create the CarVM we want to return to the client
             var model = new CarVM(result);
 
-            // Return a 200 response with the GameVM
+            // Return a 200 response with the CarVM
             return model;
         }
 

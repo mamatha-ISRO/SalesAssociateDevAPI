@@ -72,21 +72,21 @@ namespace SalesAssociate.API.Controllers
             }
         }
         //get by make 
-        //[HttpGet("{Make}")]
-        //public async Task<ActionResult<List<CarVM>>> GetbyMake(string make)
-        //{
-        //    try
-        //    {
-        //        //Get the requested Car entity from the service
-        //        var result = await _carService.GetCarsByMake(make);
-        //        return Ok(result);
-        //    }
-        //    catch
-        //    {
-        //        ;
-        //        return BadRequest(new { message = "Unable to retrieve the request car" });
-        //    }
-        //}
+       //[HttpGet("{Make}")]
+       // public async Task<ActionResult<List<CarVM>>> GetbyMake(string make)
+       // {
+       //     try
+       //     {
+       //         //Get the requested Car entity from the service
+       //        var result = await _carService.GetCarsByMake(make);
+       //         return Ok(result);
+       //     }
+       //     catch
+       // //    {
+       // //        ;
+       // //        return BadRequest(new { message = "Unable to retrieve the request car" });
+       // //    }
+       // //}
 
         // Update a Car
         [HttpPut]
